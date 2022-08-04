@@ -1,0 +1,49 @@
+In eclipse, open cart,discount,ordermain,productmain and remove noargs constructor annotation in these java classes.
+And in pom.xml add version tag to lombok dependency---<version>1.18.20</version>
+And in src/test/java/ open ShopApiApplicationTests.java
+and modify the @SpringBootTest annotation as @SpringBootTest(classes = ShopApiApplication.class)
+-------
+sudo apt install net-tools
+sudo netstat -plten
+kill -9 <process_id>
+-------
+
+MySQL
+-------
+sudo apt update
+sudo apt install mysql-server -y
+sudo mysql
+CREATE USER 'root'@'%' IDENTIFIED BY 'Chinna@1277';
+CREATE DATABASE ecommerce;
+GRANT ALL PRIVILEGES ON ecommerce.* TO 'root'@'%';
+exit
+sed "s/bind-address/#bind-address/" /etc/mysql/mysql.conf.d/mysqld.cnf > mysqld.cnf
+sudo mv mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
+cd /etc/mysql/mysql.conf.d/
+vi mysqld.cnf
+sudo /etc/init.d/mysql restart
+
+Frontend
+---
+#! /bin/bash
+sudo apt install python-software-properties
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install nodejs -y
+sudo npm install -g @angular/cli
+git clone https://github.com/pavani1277/Capstone-ShopForHome.git
+cd Capstone-ShopForHome/frontend/
+sudo npm install
+sudo ng serve --host 0.0.0.0
+
+
+Java
+-----
+#! /bin/bash
+sudo apt install openjdk-11-jre-headless -y
+sudo apt update
+sudo apt install maven -y
+git clone https://github.com/pavani1277/Capstone-ShopForHome.git
+cd Capstone-ShopForHome/backend/
+mvn clean install
+cd target/
+java -jar shop-api-0.0.1-SNAPSHOT.jar
